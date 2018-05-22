@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class WelcomeController {
 
-    //Variable
+    //Variable test
     String welcomeMessage;
 
     public WelcomeController(@Value("${WELCOME_MESSAGE}") String message){
