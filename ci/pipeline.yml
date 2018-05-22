@@ -68,7 +68,7 @@ jobs:
       manifest: pal-tracker/manifest-review.yml
       path: pal-tracker-artifacts/pal-tracker-*.jar
       environment_variables:
-        WELCOME_MESSAGE: "Hello from the review environment changes added"
+        WELCOME_MESSAGE: "Hello from the review environment"
 
 - name: deploy-production
   plan:

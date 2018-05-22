@@ -1,5 +1,6 @@
 package test.pivotal.pal.tracker;
 
+
 import io.pivotal.pal.tracker.InMemoryTimeEntryRepository;
 import io.pivotal.pal.tracker.TimeEntry;
 import org.junit.Test;
@@ -17,10 +18,13 @@ public class InMemoryTimeEntryRepositoryTest {
         TimeEntry createdTimeEntry = repo.create(new TimeEntry(123L, 456L, LocalDate.parse("2017-01-08"), 8));
 
         TimeEntry expected = new TimeEntry(1L, 123L, 456L, LocalDate.parse("2017-01-08"), 8);
+
+
         assertThat(createdTimeEntry).isEqualTo(expected);
 
         TimeEntry readEntry = repo.find(createdTimeEntry.getId());
         assertThat(readEntry).isEqualTo(expected);
+        System.out.print("SUCCESS");
     }
 
     @Test
