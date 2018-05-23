@@ -2,9 +2,7 @@
 package io.pivotal.pal.tracker;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.http.ResponseEntity;

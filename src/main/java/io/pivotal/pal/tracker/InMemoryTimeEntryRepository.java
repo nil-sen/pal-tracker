@@ -1,13 +1,12 @@
 package io.pivotal.pal.tracker;
 
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
+
 
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import java.time.LocalDate;
+
 
 
 
@@ -55,28 +54,28 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
     }
 
 
-    public TimeEntry find(long id){
+    public TimeEntry find(Long id){
 
-        return this.getEntries().get(new Long(id));
+        return this.getEntries().get(id);
     }
 
 
 
-    public TimeEntry update(long id,TimeEntry timeEntry){
+    public TimeEntry update(Long id,TimeEntry timeEntry){
 
-        TimeEntry obj = this.getEntries().get(new Long(id));
+        TimeEntry obj = this.getEntries().get(id);
         obj.setProjectId(timeEntry.getProjectId());
         obj.setUserId(timeEntry.getUserId());
         obj.setDate(timeEntry.getDate());
         obj.setHours(timeEntry.getHours());
 
-        this.getEntries().put(new Long(id),obj);
+        this.getEntries().put(id,obj);
 
-        return this.getEntries().get(new Long(id));
+        return this.getEntries().get(id);
     }
 
-    public void delete(long id){
-        this.getEntries().remove(new Long(id));
+    public void delete(Long id){
+        this.getEntries().remove(id);
     }
 
     public List<TimeEntry> list(){
