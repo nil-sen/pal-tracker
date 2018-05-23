@@ -10,6 +10,8 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
+import javax.sql.DataSource;
+
 @SpringBootApplication
 
 public class PalTrackerApplication {
@@ -19,10 +21,10 @@ public class PalTrackerApplication {
     }
 
     @Bean
-    TimeEntryRepository timeEntryRepository() {
+    TimeEntryRepository timeEntryRepository(DataSource dataSource) {
 
-        MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setUrl(System.getenv("SPRING_DATASOURCE_URL"));
+       // MysqlDataSource dataSource = new MysqlDataSource();
+       // dataSource.setUrl(System.getenv("SPRING_DATASOURCE_URL"));
 
         return new JdbcTimeEntryRepository(dataSource);
     }
